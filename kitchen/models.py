@@ -14,12 +14,13 @@ class DishType(models.Model):
 
 class Cook(AbstractUser):
     years_of_experience = models.PositiveIntegerField(default=0)
+    position = models.CharField(max_length=255, default="Chef")
 
     class Meta:
         ordering = ["username"]
 
     def __str__(self):
-        return f"{self.username} ({self.first_name} {self.last_name})"
+        return f"{self.first_name} {self.last_name} ({self.position})"
 
 
 class Dish(models.Model):
