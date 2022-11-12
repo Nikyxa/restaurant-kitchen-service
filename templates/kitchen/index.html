@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="sitetext px-100 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+  <h1 class="display-5">Welcome!</h1>
+  <p class="lead">
+    It's our customized site for our kitchen staff in order to improve the autonomy and quality of our work.
+  </p>
+</div>
+
+  <div class="container">
+  <div class="card-deck mb-3 text-center">
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">DishTypes</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title"> {{ num_dishtypes }} </h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>Now in our menu we have:</li>
+          <li>*starter *salad</li>
+          <li>*dessert *soup</li>
+          <li>*pizza *main *pasta</li>
+        </ul>
+        <button type="button" class="btn btn-lg btn-block btn-outline-primary"><a href="{% url 'kitchen:dishtype-list' %}">List of dishtypes</a></button>
+      </div>
+    </div>
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">Dishes</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">{{ num_dishes }}</h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>The most popular dishes:</li>
+          <li>*Aragula Pizza</li>
+          <li>*Bolognese Pasta</li>
+          <li>*Mushroom Ravioli</li>
+        </ul>
+        <button type="button" class="btn btn-lg btn-block btn-outline-primary"><a href="{% url 'kitchen:dish-list' %}">List of dishes</a></button>
+      </div>
+    </div>
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">Cooks</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">{{ num_cooks }}</h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>The best chefs of this week:</li>
+          <li>*Hector Jimenez-Bravo</li>
+          <li>*Edik Kanaryan</li>
+          <li>*Sasha Tsvigun</li>
+        </ul>
+        <button type="button" class="btn btn-lg btn-block btn-outline-primary"><a href="{% url 'kitchen:cook-list' %}">List of cooks</a></button>
+      </div>
+    </div>
+    <p class="lead">
+      You have visited this page
+        {{ num_visits }} time{{ num_visits|pluralize }}.
+    </p>
+  </div>
+  </div>
+{% endblock %}
+
+
+
+
+
+
+
