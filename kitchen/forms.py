@@ -17,7 +17,9 @@ class DishForm(forms.ModelForm):
 
 
 class CookExperienceUpdateForm:
-    pass
+    class Meta:
+        model = Cook
+        fields = ["years_of_experience"]
 
 
 class DishTypeSearchForm(forms.Form):
@@ -56,6 +58,3 @@ class CookCreationForm(UserCreationForm):
             "years_of_experience",
             "position",
         )
-
-    # def clean_years_of_experience(self):  # this logic is optional, but possible
-    #     return validate_years_of_experience(self.cleaned_data["years_of_experience"])
