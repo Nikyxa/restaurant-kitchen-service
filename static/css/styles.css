@@ -12,7 +12,7 @@ html {
 }
 .container {
   max-width: 960px;
-  transform: translateX(-15%);
+  transform: translateX(-10%);
 }
 
 .sitetext {
@@ -53,4 +53,12 @@ table.center {
 
 .titlelist{
   transform: translateY(200%);
+}
+
+.container .detail{
+  transform: translateY(50%)
+}
+
+.p1{
+  font-family: Sans-serif;
 }
