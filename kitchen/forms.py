@@ -6,7 +6,7 @@ from kitchen.models import Dish, Cook
 
 
 class DishForm(forms.ModelForm):
-    drivers = forms.ModelMultipleChoiceField(
+    cooks = forms.ModelMultipleChoiceField(
         queryset=get_user_model().objects.all(),
         widget=forms.CheckboxSelectMultiple,
     )

@@ -59,6 +59,9 @@ table.center {
   transform: translateY(50%)
 }
 
+.objectmove{
+  transform: translateY(50%)
+}
 .p1{
   font-family: Sans-serif;
 }

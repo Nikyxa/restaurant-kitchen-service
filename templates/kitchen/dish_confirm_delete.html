@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Delete dish?</h1>
+  <form action="" method="post">
+    {% csrf_token %}
+<h4>If you delete this dish you won't be able to return it back.</h4>
+    <input type="submit" value="Yes, I want to delete this dish!" class="btn btn-secondary">
+  </form>
+{% endblock %}
