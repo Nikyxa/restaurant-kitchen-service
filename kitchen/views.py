@@ -25,7 +25,6 @@ from .forms import (
 
 @login_required
 def index(request):
-
     num_cooks = Cook.objects.count()
     num_dishes = Dish.objects.count()
     num_dishtypes = DishType.objects.count()
@@ -45,7 +44,7 @@ def index(request):
 
 class DishTypeListView(LoginRequiredMixin, generic.ListView):
     model = DishType
-    context_object_name = "dishtype-list"
+    context_object_name = "dishtype_list"
     template_name = "kitchen/dishtype_list.html"
     paginate_by = 5
 
@@ -69,8 +68,6 @@ class DishTypeListView(LoginRequiredMixin, generic.ListView):
             return self.model.objects.filter(
                 name__icontains=form.cleaned_data["name"]
             )
-
-        return self.model.objects.all()
 
 
 class DishTypeCreateView(LoginRequiredMixin, generic.CreateView):
@@ -114,7 +111,7 @@ class DishListView(LoginRequiredMixin, generic.ListView):
         if form.is_valid():
             return self.queryset.filter(
                 Q(name__icontains=form.cleaned_data["name"])
-                | Q(dish_type__name__icontains=form.cleaned_data["dish_type"])
+                | Q(dish_type__name__icontains=form.cleaned_data["name"])
             )
 
         return self.model.objects.all()
@@ -195,7 +192,7 @@ class CookDeleteView(LoginRequiredMixin, generic.DeleteView):
 def toggle_assign_to_dish(request, pk):
     cook = Cook.objects.get(id=request.user.id)
     if (
-        Dish.objects.get(id=pk) in cook.dishes.all()
+            Dish.objects.get(id=pk) in cook.dishes.all()
     ):
         cook.dishes.remove(pk)
     else:

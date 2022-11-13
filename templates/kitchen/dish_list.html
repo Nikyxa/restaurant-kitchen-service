@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load crispy_forms_filters %}
+{% block sidebar %}
+  {% include "includes/sidebar.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="container" style="text-align:center;">
+        {% if dish_list %}
+          <h1 class="titlelist my-0 font-weight-normal"
+              style="text-align:center;color:darkred;">
+            DISHES IN MENU
+        </h1>
+        <table class="table center table-bordered table-dark mb-3 text-center"
+        style="background-color: lightsteelblue">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">PRICE</th>
+                    <th scope="col">DISHTYPE</th>
+
+                </tr>
+                {% for dish in dish_list %}
+                  <tr>
+                  <td>
+                    {{ dish.id }}
+                  </td>
+                  <td>
+                    {{ dish.name }}
+                  </td>
+                    <td>
+                    {{ dish.price }}
+                  </td>
+                    <td>
+                    {{ dish.dish_type }}
+                  </td>
+        </tr>
+          {% endfor %}
+                {% else %}
+      <p>There are no dishes in menu.</p>
+                {% endif %}
+        </table>
+    </div>
+{% endblock %}

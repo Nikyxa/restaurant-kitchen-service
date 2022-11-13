@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load crispy_forms_filters %}
+{% block sidebar %}
+  {% include "includes/sidebar.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="container" style="text-align:center;">
+        {% if dish_list %}
+          <h1 class="titlelist my-0 font-weight-normal"
+              style="text-align:center;color:darkred;">
+            COOKS IN RESTAURANT
+        </h1>
+        <table class="table center table-bordered table-dark mb-3 text-center"
+        style="background-color: lightgrey">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Username</th>
+                    <th scope="col">First name</th>
+                    <th scope="col">Last name</th>
+                    <th scope="col">Position</th>
+
+                </tr>
+                {% for cook in cook_list %}
+                  <tr>
+                  <td>
+                    {{ cook.id }}
+                  </td>
+                  <td><a href="{{ cook.get_absolute_url }}">{{ cook.username }} {% if user == cook %} (Me){% endif %}</a>
+                  </td>
+                    <td>
+                    {{ cook.first_name }}
+                  </td>
+                    <td>
+                    {{ cook.last_name }}
+                  </td>
+                  <td>
+                    {{ cook.position }}
+                  </td>
+        </tr>
+          {% endfor %}
+                {% else %}
+      <p>There are no cooks in restaurant.</p>
+                {% endif %}
+        </table>
+    </div>
+{% endblock %}

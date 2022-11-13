@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load crispy_forms_filters %}
+{% block sidebar %}
+  {% include "includes/sidebar.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="container" style="text-align:center;">
+        {% if dishtype_list %}
+          <h1 class="titlelist my-0 font-weight-normal"
+              style="text-align:center;color:darkred;">
+            DISHTYPES IN MENU
+        </h1>
+        <table class="table center table-bordered table-dark mb-3 text-center"
+        style="background-color: #94b24d">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Update</th>
+                    <th scope="col">Delete</th>
+                </tr>
+                {% for dishtype in dishtype_list %}
+                  <tr>
+                  <td>
+                    {{ dishtype.id }}
+                  </td>
+                  <td>
+                    {{ dishtype.name }}
+                  </td>
+          <td>
+              <a href="{% url 'kitchen:dishtype-update' pk=dishtype.id %}">
+                Update
+              </a>
+            </td>
+            <td>
+              <a style="color: red"
+                href="{% url 'kitchen:dishtype-delete' pk=dishtype.id %}">
+                Delete
+              </a>
+            </td>
+        </tr>
+          {% endfor %}
+                {% else %}
+      <p>There are no dishtypes in menu.</p>
+                {% endif %}
+        </table>
+    </div>
+{% endblock %}
