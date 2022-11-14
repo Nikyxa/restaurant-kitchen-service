@@ -7,10 +7,10 @@
 {% block content %}
 <div class="container" style="text-align:center;">
         {% if dish_list %}
-          <h1 class="titlelist my-0 font-weight-normal"
-              style="text-align:center;color:darkred;">
-            DISHES IN MENU
-        </h1>
+ <form action="" method="get" class="form-inline" style="padding-top: 120px">
+    {{ search_form|crispy }}
+  <input class="btn btn-secondary" type="submit" value="Search">
+  </form>
         <table class="table center table-bordered table-dark mb-3 text-center"
         style="background-color: #264b5d; opacity: 90%">
             <thead>
@@ -42,4 +42,9 @@
                 {% endif %}
         </table>
     </div>
+  <div>
+  <a href="{% url 'kitchen:dish-create' %}" class="btn btn-outline-danger btn-success link-to-page" style="padding-end: 150px">
+      Create
+    </a>
+  </div>
 {% endblock %}

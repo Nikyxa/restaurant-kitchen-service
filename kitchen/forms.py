@@ -16,7 +16,7 @@ class DishForm(forms.ModelForm):
         fields = "__all__"
 
 
-class CookExperienceUpdateForm:
+class CookExperienceUpdateForm(forms.ModelForm):
     class Meta:
         model = Cook
         fields = ["years_of_experience"]

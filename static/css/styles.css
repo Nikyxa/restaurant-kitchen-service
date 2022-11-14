@@ -1,67 +1,12 @@
-html {
-  font-size: 16px;
-}
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-.sidebar{
-  min-width: 960px;
-  left: 100%;
-}
-.container {
-  max-width: 960px;
-  transform: translateX(-10%);
+body {
+    margin-top: 20px;
 }
 
-.sitetext {
-  max-width: 960px;
-  left: 100%;
-  transform: translateX(-10%);
+.link-to-page {
+    float: center;
+    margin: 0 2px 0 2px;
 }
 
-.card-deck .card {
-  min-width: 220px;
-  left: 50%;
-  transform: translateX(-200%);
-}
-
-.card .card-cascade {
-    min-width: 220px;
-    left: 50%;
-    transform: translateX(-10%);
-}
-
-.table {
-  width:90%;
-  height:100%;
-  margin-left:25%;
-  margin-right:15%;
-  left: 10%;
-  transform: translateY(50%);
-}
-
-table.center {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.btn{
-  transform: translateY(200%);
-}
-
-.titlelist{
-  transform: translateY(200%);
-}
-
-.container .detail{
-  transform: translateY(50%)
-}
-
-.objectmove{
-  transform: translateY(50%)
-}
-.p1{
-  font-family: Sans-serif;
+.container .detail {
+    align-content: center;
 }

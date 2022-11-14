@@ -4,7 +4,7 @@
   {% include "includes/sidebar.html" %}
 {% endblock %}
 {% block content %}
-
+<div class="container" style="padding-top: 120px">
 {% if form.errors %}
   <p>Your username and password didn't match. Please try again.</p>
 {% endif %}
@@ -22,5 +22,5 @@
   <input type="submit" value="Login" class="btn btn-primary" />
   <input type="hidden" name="next" value="{{ next }}" />
 </form>
-
+</div>
 {% endblock %}
