@@ -3,7 +3,7 @@
 Django project for managing dishes and staff in the Restaurant Kitchen.
 
 ## Check it out!
-[Kitchen service project deployed](PASTE_LINK_HERE)
+[Kitchen service project deployed]()
 
 ## Installing
 
