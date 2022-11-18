@@ -190,11 +190,11 @@ class CookDeleteView(LoginRequiredMixin, generic.DeleteView):
 
 @login_required
 def toggle_assign_to_dish(request, pk):
-    cook = Cook.objects.get(id=request.user.id)
+    dish = Dish.objects.get(pk=pk)
     if (
-            Dish.objects.get(id=pk) in cook.dishes.all()
+            request.user.id in dish.cooks.values_list("id", flat=True)
     ):
-        cook.dishes.remove(pk)
+        dish.cooks.remove(request.user.id)
     else:
-        cook.dishes.add(pk)
-    return HttpResponseRedirect(reverse_lazy("kitchen:cook-detail", args=[pk]))
+        dish.cooks.add(request.user.id)
+    return HttpResponseRedirect(reverse_lazy("kitchen:dish-detail", args=[pk]))
