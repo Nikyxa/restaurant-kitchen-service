@@ -3,7 +3,7 @@
 Django project for managing dishes and staff in the Restaurant Kitchen.
 
 ## Check it out!
-[Kitchen service project deployed]()
+[Kitchen service project deployed](https://restaurant-kitchen-service-51p0.onrender.com/)
 
 ## Installing
 
