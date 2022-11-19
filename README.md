@@ -23,3 +23,11 @@ python manage.py runserever #starts Django Server
 * Authentication functionality for Cook/User.
 * Managing dishes cooks and dishtypes directly from website interface.
 * Powerful admin panel for advanced managing.
+
+## Test user
+To test site you can log in as user.
+```shell
+login: user 
+
+password: user12345
+```
