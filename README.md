@@ -31,3 +31,6 @@ login: user
 
 password: user12345
 ```
+
+## Demo
+![Restaurant Kitchen Service site (demo)](https://user-images.githubusercontent.com/113314502/202849406-9038eaa7-7b76-4728-9f05-fc683d2357e4.png)
