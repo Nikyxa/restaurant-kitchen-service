@@ -37,7 +37,7 @@
               </a>
             </td>
             <td>
-              <a style="color: red"
+              <a style="color: orangered"
                 href="{% url 'kitchen:dishtype-delete' pk=dishtype.id %}">
                 Delete
               </a>
@@ -49,4 +49,9 @@
                 {% endif %}
         </table>
     </div>
+    <div>
+    <a href="{% url 'kitchen:dishtype-create' %}" class="btn btn-outline-white btn-success mb-2 link-to-page" style="padding-end: 150px">
+      Create
+    </a>
+  </div>
 {% endblock %}

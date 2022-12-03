@@ -50,6 +50,9 @@ class CookSearchForm(forms.Form):
 
 
 class CookCreationForm(UserCreationForm):
+    first_name = forms.CharField(max_length=75, required=True)
+    last_name = forms.CharField(max_length=75, required=True)
+
     class Meta(UserCreationForm.Meta):
         model = Cook
         fields = UserCreationForm.Meta.fields + (
@@ -58,3 +61,6 @@ class CookCreationForm(UserCreationForm):
             "years_of_experience",
             "position",
         )
+
+
+

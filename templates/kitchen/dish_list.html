@@ -19,6 +19,7 @@
                     <th scope="col">Name</th>
                     <th scope="col">PRICE</th>
                     <th scope="col">DISHTYPE</th>
+                    <th scope="col">COOK</th>
 
                 </tr>
                 {% for dish in dish_list %}
@@ -27,7 +28,7 @@
                     {{ dish.id }}
                   </td>
                   <td>
-                    {{ dish.name }}
+                    <a href={% url 'kitchen:dish-detail' pk=dish.id %}>{{ dish.name }}</a>
                   </td>
                     <td>
                     {{ dish.price }}
@@ -35,7 +36,14 @@
                     <td>
                     {{ dish.dish_type }}
                   </td>
-        </tr>
+                  <td>
+                    {% for cook in dish.cooks.all %}
+                    <p>{{ cook.last_name }}</p>
+                    {% empty %}
+                      <p>-</p>
+                    {% endfor %}
+                  </td>
+                  </tr>
           {% endfor %}
                 {% else %}
       <p>There are no dishes in menu.</p>
@@ -43,7 +51,7 @@
         </table>
     </div>
   <div>
-  <a href="{% url 'kitchen:dish-create' %}" class="btn btn-outline-danger btn-success link-to-page" style="padding-end: 150px">
+  <a href="{% url 'kitchen:dish-create' %}" class="btn btn-outline-white btn-success mb-2 link-to-page" style="padding-end: 150px">
       Create
     </a>
   </div>

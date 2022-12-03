@@ -1,7 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
-
-<div class="sitetext px-100 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+  {% block sidebar %}
+    {% include "includes/sidebar.html" %}
+  {% endblock %}
+<hr>
+<div class="sitetext px-100 py-5 pt-md-5 pb-md-4 mx-auto text-center">
   <h1 class="display-5">Welcome!</h1>
   <p class="lead">
     It's our customized site for our kitchen staff in order to improve the autonomy and quality of our work.
